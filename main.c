@@ -14,11 +14,11 @@
 //ISR functions
 void ISRmore(void) {
     printf("more delay\n");
-    delay += DLEAY_INCREASE;
+    delayamnt += DLEAY_INCREASE;
 }
 void ISRless(void) {
     printf("less delay\n");
-    delay -= DLEAY_INCREASE;
+    delayamnt -= DLEAY_INCREASE;
 }
 
 
@@ -34,7 +34,7 @@ int main(int argc, char *argv[]) {
     printf("\033[32mInit succeded\033[37m\n");
     
     //values
-    int delay = DELAY
+    int delayamnt = DELAY
 
     //pin modes
     pinMode(LED, OUTPUT);
