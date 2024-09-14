@@ -6,7 +6,7 @@
 int main(int argc, char *argv[]) {
 
     if (wiringPiSetup() == -1) {
-        printf("WiringPi init failed\n")
+        printf("WiringPi init failed\n");
         return 2; // Initialization failed
     }
 
