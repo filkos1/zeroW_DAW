@@ -10,7 +10,7 @@
 #define DELAY (500) //in ms
 #define DLEAY_INCREASE (100)
 
-int delayamnt = DELAY
+int delayamnt = DELAY;
 
 
 //ISR functions
