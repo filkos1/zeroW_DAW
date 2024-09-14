@@ -2,7 +2,7 @@
 //compiler
 #include <stdio.h>  
 #include <wiringPi.h>
-#define PIN (18)
+#define PIN (12)
 #define DELAY (500) //in ms
 
 // The main function
