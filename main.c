@@ -15,12 +15,14 @@ int main(int argc, char *argv[]) {
     printf("\033[32mInit succeded\033[37m\n");
     
     pinMode(PIN, OUTPUT);
+    
+    
     while (1) {
         digitalWrite(PIN, HIGH);
-        printf("Pin %d is high", PIN);
+        printf("Pin is high\n");
         delay(DELAY);
         digitalWrite(PIN, LOW);
-        printf("Pin %d is low", PIN);
+        printf("Pin is low\n");
         delay(DELAY);
 
     }
