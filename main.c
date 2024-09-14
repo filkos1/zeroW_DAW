@@ -34,7 +34,7 @@ int main(int argc, char *argv[]) {
     printf("\033[32mInit succeded\033[37m\n");
     
     //values
-    const int delay = DELAY
+    int delay = DELAY
 
     //pin modes
     pinMode(LED, OUTPUT);
