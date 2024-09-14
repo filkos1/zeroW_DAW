@@ -8,14 +8,17 @@
 #define LED (12)
 //some other stuff
 #define DELAY (500) //in ms
+#define DLEAY_INCREASE (100)
 
+
+//ISR functions
 void ISRmore(void) {
     printf("more delay\n");
-
+    delay += DLEAY_INCREASE;
 }
 void ISRless(void) {
     printf("less delay\n");
-
+    delay -= DLEAY_INCREASE;
 }
 
 
@@ -30,6 +33,9 @@ int main(int argc, char *argv[]) {
     }
     printf("\033[32mInit succeded\033[37m\n");
     
+    //values
+    const int delay = DELAY
+
     //pin modes
     pinMode(LED, OUTPUT);
     pinMode(BUTTON_MORE, INPUT);
@@ -53,9 +59,9 @@ int main(int argc, char *argv[]) {
 
     while (1) {
         digitalWrite(LED, HIGH);
-        delay(DELAY);
+        delay(delay);
         digitalWrite(LED, LOW);
-        delay(DELAY);
+        delay(delay);
 
     }
     
