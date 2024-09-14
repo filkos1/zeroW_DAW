@@ -10,6 +10,8 @@
 #define DELAY (500) //in ms
 #define DLEAY_INCREASE (100)
 
+int delayamnt = DELAY
+
 
 //ISR functions
 void ISRmore(void) {
@@ -34,7 +36,7 @@ int main(int argc, char *argv[]) {
     printf("\033[32mInit succeded\033[37m\n");
     
     //values
-    int delayamnt = DELAY
+    
 
     //pin modes
     pinMode(LED, OUTPUT);
