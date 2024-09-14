@@ -18,8 +18,10 @@ int main(int argc, char *argv[]) {
     while (1)
     {
         digitalWrite(PIN, HIGH);
+        printf("Pin %d is high", PIN)
         delay(DELAY);
-        digitalWrite(PIN, HIGH);
+        digitalWrite(PIN, LOW);
+        printf("Pin %d is low", PIN)
         delay(DELAY);
 
     }
