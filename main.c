@@ -1,9 +1,25 @@
 
-//compiler
+//libraries
 #include <stdio.h>  
 #include <wiringPi.h>
-#define PIN (12)
+//pins (all in phys addr)
+#define BUTTON_MORE (35)
+#define BUTTON_LESS (37)
+#define LED (12)
+//some other stuff
 #define DELAY (500) //in ms
+
+void ISRmore(void) {
+    printf("more delay\n");
+
+}
+void ISRless(void) {
+    printf("less delay\n");
+
+}
+
+
+
 
 // The main function
 int main(int argc, char *argv[]) {
@@ -14,15 +30,31 @@ int main(int argc, char *argv[]) {
     }
     printf("\033[32mInit succeded\033[37m\n");
     
-    pinMode(PIN, OUTPUT);
+    //pin modes
+    pinMode(LED, OUTPUT);
+    pinMode(BUTTON_MORE, INPUT);
+    pinMode(BUTTON_LESS, INPUT);
+
+    //pull-up resistors
+    pullUpDnControl(BUTTON_MORE, PUD_UP);
+    pullUpDnControl(BUTTON_LESS, PUD_UP);
+
+    if (wiringPiISR(BUTTON_MORE, INT_EDGE_FALLING, &ISRmore) < 0) {
+        printf("Unable to setup ISR\n");
+        return 5;
+    }
     
-    
+    if (wiringPiISR(PIN, INT_EDGE_FALLING, &ISRless) < 0) {
+        printf("Unable to setup ISR\n");
+        return 5;
+    }
+
+
+
     while (1) {
-        digitalWrite(PIN, HIGH);
-        printf("Pin is high\n");
+        digitalWrite(LED, HIGH);
         delay(DELAY);
-        digitalWrite(PIN, LOW);
-        printf("Pin is low\n");
+        digitalWrite(LED, LOW);
         delay(DELAY);
 
     }
