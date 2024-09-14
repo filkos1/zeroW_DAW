@@ -61,9 +61,9 @@ int main(int argc, char *argv[]) {
 
     while (1) {
         digitalWrite(LED, HIGH);
-        delay(delay);
+        delay(delayamnt);
         digitalWrite(LED, LOW);
-        delay(delay);
+        delay(delayamnt);
 
     }
     
