@@ -1,5 +1,4 @@
 #include <stdio.h>  // Include the standard input/output
-#include <bcm2835.h>
 #include <wiringPi.h>
 
 // The main function
