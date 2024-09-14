@@ -8,14 +8,7 @@ int main(int argc, char *argv[]) {
         printf("WiringPi init failed\n");
         return 2; // Initialization failed
     }
-
-    if (!bcm2835_init()) {
-        printf("bcm2835_init failed. Are you running as root?\n");
-        return 1;
-    }
-
-
-
+    printf("Init succeded");
     printf("Hello, World!\n");
 
     // Return 0 to indicate successful completion
