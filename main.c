@@ -44,7 +44,7 @@ int main(int argc, char *argv[]) {
         return 5;
     }
     
-    if (wiringPiISR(PIN, INT_EDGE_FALLING, &ISRless) < 0) {
+    if (wiringPiISR(BUTTON_LESS, INT_EDGE_FALLING, &ISRless) < 0) {
         printf("Unable to setup ISR\n");
         return 5;
     }
