@@ -10,6 +10,7 @@
 #define DELAY (500) //in ms
 #define DLEAY_INCREASE (100)
 
+//values
 int delayamnt = DELAY;
 
 
@@ -35,7 +36,7 @@ int main(int argc, char *argv[]) {
     }
     printf("\033[32mInit succeded\033[37m\n");
     
-    //values
+   
     
 
     //pin modes
