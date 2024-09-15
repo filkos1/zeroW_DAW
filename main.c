@@ -39,7 +39,7 @@ int main(int argc, char *argv[]) {
         //row 1
         digitalWrite(O1, HIGH);
         if (digitalRead(I1) == 1) {
-            printf("r1 c1 pressed");
+            printf("r1 c1 pressed\n");
         }
          
 
