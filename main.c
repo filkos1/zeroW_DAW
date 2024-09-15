@@ -31,6 +31,10 @@ int main(int argc, char *argv[]) {
     pinMode(O1, OUTPUT);
     pinMode(O2, OUTPUT);
     pinMode(O3, OUTPUT);
+
+    pullUpDnControl(I1, PUD_DOWN);
+    pullUpDnControl(I2, PUD_DOWN);
+    pullUpDnControl(I3, PUD_DOWN);
     pinMode(I1, INPUT);
     pinMode(I2, INPUT);
     pinMode(I3, INPUT);
