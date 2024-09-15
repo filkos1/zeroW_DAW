@@ -38,7 +38,7 @@ int main(int argc, char *argv[]) {
     while (1) {
         //row 1
         digitalWrite(O1, HIGH);
-        if (digitalRead(I1) == 1) {
+        if (digitalRead(I1) == HIGH) {
             printf("r1 c1 pressed\n");
         }
          
