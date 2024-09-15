@@ -15,7 +15,7 @@
 //some other stuff
 
 //values
-unsigned char pressed[3] = void;
+unsigned char pressed[3] = {0,0,0};
 
 
 // The main function
