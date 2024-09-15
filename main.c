@@ -3,28 +3,19 @@
 #include <stdio.h>  
 #include <wiringPi.h>
 //pins (all in phys addr)
-#define BUTTON_MORE (35)
-#define BUTTON_LESS (37)
-#define LED (12)
+
+//Outputs
+#define O1 (8)
+#define O2 (10)
+#define O3 (12)
+//Inputs
+#define I1 (7)
+#define I2 (5)
+#define I3 (3)
 //some other stuff
-#define DELAY (500) //in ms
-#define DLEAY_INCREASE (100)
 
 //values
-int delayamnt = DELAY;
-
-
-//ISR functions
-void ISRmore(void) {
-    printf("more delay\n");
-    delayamnt += DLEAY_INCREASE;
-}
-void ISRless(void) {
-    printf("less delay\n");
-    delayamnt -= DLEAY_INCREASE;
-}
-
-
+unsigned char pressed[3] = void;
 
 
 // The main function
@@ -36,40 +27,28 @@ int main(int argc, char *argv[]) {
     }
     printf("\033[32mInit succeded\033[37m\n");
     
-   
-    
-
     //pin modes
-    pinMode(LED, OUTPUT);
-    pinMode(BUTTON_MORE, INPUT);
-    pinMode(BUTTON_LESS, INPUT);
-
-    //pull-up resistors
-    pullUpDnControl(BUTTON_MORE, PUD_UP);
-    pullUpDnControl(BUTTON_LESS, PUD_UP);
-
-    if (wiringPiISR(BUTTON_MORE, INT_EDGE_FALLING, &ISRmore) < 0) {
-        printf("Unable to setup ISR\n");
-        return 5;
-    }
-    
-    if (wiringPiISR(BUTTON_LESS, INT_EDGE_FALLING, &ISRless) < 0) {
-        printf("Unable to setup ISR\n");
-        return 5;
-    }
-
-
+    pinMode(O1, OUTPUT);
+    pinMode(O2, OUTPUT);
+    pinMode(O3, OUTPUT);
+    pinMode(I1, INPUT);
+    pinMode(I2, INPUT);
+    pinMode(I3, INPUT);
 
     while (1) {
-        digitalWrite(LED, HIGH);
-        delay(delayamnt);
-        digitalWrite(LED, LOW);
-        delay(delayamnt);
+        //row 1
+        digitalWrite(O1, HIGH);
+        if (digitalRead(I1) == 1) {
+            printf("r1 c1 pressed");
+        }
+         
+
+        delay(10);
 
     }
     
 
-
+   
     
     
     // Return 0 to indicate successful completion
