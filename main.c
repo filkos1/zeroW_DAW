@@ -38,6 +38,7 @@ int main(int argc, char *argv[]) {
     while (1) {
         //row 1
         digitalWrite(O1, HIGH);
+        delay(10);
         unsigned int state = digitalRead(I1);
         if (state == HIGH) {
             printf("r1 c1 pressed\n");
