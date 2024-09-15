@@ -15,7 +15,8 @@
 //some other stuff
 
 //values
-unsigned char pressed[]
+unsigned char pressed[3] = {};
+unsigned char nextArr = 0;
 
 
 // The main function
