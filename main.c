@@ -101,10 +101,13 @@ int main(int argc, char *argv[]) {
         }
         digitalWrite(O3, LOW);
          
-        printf("\rPressed buttons are ");
+        printf("\r\033[KPressed buttons are ");
         for (int i = 0; i < nextArr; i++) {
             printf("%d ", pressed[i]);
         }
+
+        fflush(stdout); 
+        
         delay(100);
 
     }
