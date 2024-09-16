@@ -93,7 +93,7 @@ int main(int argc, char *argv[]) {
         }
         digitalWrite(O3, LOW);
          
-        printf("\rPressed buttons are %d ", pressed);
+        printf("Pressed buttons are %d \n", pressed);
 
         nextArr = 0;
         delay(100);
