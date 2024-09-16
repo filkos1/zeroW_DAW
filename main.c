@@ -45,10 +45,57 @@ int main(int argc, char *argv[]) {
         digitalWrite(O1, HIGH);
         delay(10);
         if (digitalRead(I1) == HIGH) {
-            
+            pressed[nextArr] = 11
+            nextArr ++;
         }
-         
+        if (digitalRead(I2) == HIGH) {
+            pressed[nextArr] = 12
+            nextArr ++;
+        }
+        if (digitalRead(I3) == HIGH) {
+            pressed[nextArr] = 13
+            nextArr ++;
+        }
+        digitalWrite(O1, LOW);
 
+        //row 2
+        digitalWrite(O2, HIGH);
+        delay(10);
+        if (digitalRead(I1) == HIGH) {
+            pressed[nextArr] = 21
+            nextArr ++;
+        }
+        if (digitalRead(I2) == HIGH) {
+            pressed[nextArr] = 22
+            nextArr ++;
+        }
+        if (digitalRead(I3) == HIGH) {
+            pressed[nextArr] = 23
+            nextArr ++;
+        }
+        digitalWrite(O2, LOW);
+
+
+
+        digitalWrite(O3, HIGH);
+        delay(10);
+        if (digitalRead(I1) == HIGH) {
+            pressed[nextArr] = 31
+            nextArr ++;
+        }
+        if (digitalRead(I2) == HIGH) {
+            pressed[nextArr] = 32
+            nextArr ++;
+        }
+        if (digitalRead(I3) == HIGH) {
+            pressed[nextArr] = 33
+            nextArr ++;
+        }
+        digitalWrite(O3, LOW);
+         
+        printf("\rPressed buttons are %d ", pressed)
+
+        nextArr = 0
         delay(100);
 
     }
