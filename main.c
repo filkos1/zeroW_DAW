@@ -105,9 +105,10 @@ int main(int argc, char *argv[]) {
         for (int i = 0; i < nextArr; i++) {
             printf("%d ", pressed[i]);
         }
-
-        fflush(stdout); 
+        printf("                     ");
         
+        fflush(stdout); 
+
         delay(100);
 
     }
