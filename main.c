@@ -13,9 +13,10 @@
 #define I2 (5)
 #define I3 (3)
 //some other stuff
+#define MAX_PRESSED 3  // Maximum number of presses we track at one time
 
 //values
-unsigned char pressed[3] = {};
+unsigned char pressed[MAX_PRESSED] = {0};
 unsigned char nextArr = 0;
 
 
@@ -41,6 +42,13 @@ int main(int argc, char *argv[]) {
     pinMode(I3, INPUT);
 
     while (1) {
+
+        // Clear pressed array
+        for (int i = 0; i < MAX_PRESSED; i++) {
+            pressed[i] = 0;  // Clear previous data
+        }
+        nextArr = 0;  // Reset the index for the current scan
+
         //row 1
         digitalWrite(O1, HIGH);
         delay(10);
@@ -97,8 +105,6 @@ int main(int argc, char *argv[]) {
         for (int i = 0; i < nextArr; i++) {
             printf("%d ", pressed[i]);
         }
-
-        nextArr = 0;
         delay(100);
 
     }
