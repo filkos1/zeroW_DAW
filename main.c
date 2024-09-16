@@ -50,7 +50,7 @@ int main(int argc, char *argv[]) {
 
         // Check Row 1
         digitalWrite(O1, HIGH);
-        delay(10);  // Slight delay for stable read
+        delay(50);  // Slight delay for stable read
         if (digitalRead(I1) == HIGH && nextArr < MAX_PRESSED) {
             pressed[nextArr++] = 11;  // Row 1, Column 1
         }
@@ -64,7 +64,7 @@ int main(int argc, char *argv[]) {
 
         // Check Row 2
         digitalWrite(O2, HIGH);
-        delay(10);  // Slight delay for stable read
+        delay(50);  // Slight delay for stable read
         if (digitalRead(I1) == HIGH && nextArr < MAX_PRESSED) {
             pressed[nextArr++] = 21;  // Row 2, Column 1
         }
@@ -78,7 +78,7 @@ int main(int argc, char *argv[]) {
 
         // Check Row 3
         digitalWrite(O3, HIGH);
-        delay(10);  // Slight delay for stable read
+        delay(50);  // Slight delay for stable read
         if (digitalRead(I1) == HIGH && nextArr < MAX_PRESSED) {
             pressed[nextArr++] = 31;  // Row 3, Column 1
         }
