@@ -95,7 +95,7 @@ int main(int argc, char *argv[]) {
          
         printf("\rPressed buttons are %d ", pressed);
 
-        nextArr = 0
+        nextArr = 0;
         delay(100);
 
     }
